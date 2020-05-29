@@ -11,19 +11,11 @@
 	<p>
 		<h2>COVID-19 Zambia Daily Statistics</h2>
 	</p>
+ <div id="container" style="width:75%;height: 50vh">
+ 	<canvas id="myChart"></canvas>
+ </div>
 
-<div style="width:80%;">
-	<div class="chartjs-size-monitor">
-	<div class="chartjs-size-monitor-expand">
-	<div class=""></div>
-</div>
-<div class="chartjs-size-monitor-shrink"><div class=""></div>
-</div>
-</div>
 
-<canvas id="myChart" style="display: block; height: 563px; width: 1127px;" width="1408" height="703" class="chartjs-render-monitor">		
-		</canvas>	
-</div> 
 	<script>
 		const xlabels = [];
 		const ycases = [];
@@ -38,6 +30,10 @@ async function chartIt(){
 
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
+	options:{
+		responsive:true,
+		maintainAspectRatio:false,
+	},
     type: 'line', 
     data: {
         labels: xlabels,
@@ -88,8 +84,8 @@ const myChart = new Chart(ctx, {
 			});
 		}
 	</script>
-	<p>
-		<a href="https://github.com/CSSEGISandData">Source:Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a>
+	</script>
+	<p>source:<a href="https://github.com/CSSEGISandData">Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a>
 	</p>
 </body>
 </html> 
